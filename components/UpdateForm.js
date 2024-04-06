@@ -8,9 +8,6 @@ const UpdateForm = ({ id, amount, date, onFormClose, onFormSubmit }) => {
   const [e_amount,setSamount] = useState(amount)
   const [e_date,setSdate] = useState(date)
 
-  // const today = new Date().toDateString();
-
-
   const handleAmount = (tt) => {
     setSamount(tt)
   }
@@ -54,8 +51,8 @@ const UpdateForm = ({ id, amount, date, onFormClose, onFormSubmit }) => {
         </View>
       </View>
       <View style={styles.buttonGroup}>
-        <MyButton small color="#21BA45" title="Update" onPress={handleSubmit} />
-        <MyButton small color="#DB2828" title="Cancel" onPress={onFormClose} />
+        <MyButton small color="#21BA45" title="Update" onPress={handleSubmit} hovercolor='#bbfa91'/>
+        <MyButton small color="#DB2828" title="Cancel" onPress={onFormClose} hovercolor='#f7a774' />
       </View>
     </View>
   )
@@ -66,7 +63,7 @@ export default UpdateForm;
 const styles = StyleSheet.create({
   formContainer: {
     backgroundColor: 'white',
-    borderColor: '#D6D7DA',
+    borderColor: '#bd4db2',
     borderWidth: 2,
     borderRadius: 10,
     padding: 15,

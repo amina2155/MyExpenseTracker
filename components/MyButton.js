@@ -1,7 +1,7 @@
 import {StyleSheet, Text, TouchableOpacity, TouchableHighlight} from 'react-native';
 import {useState} from 'react'
 
-const ClassButton = ({title,onPress,color,small,hovercolor,hovertextcolor}) => {
+const ClassButton = ({title,onPress,color,small,hovercolor}) => {
 
   const [isHovered, setIsHovered] = useState(false);
 

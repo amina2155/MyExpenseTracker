@@ -10,18 +10,14 @@ const ExpenseBox = ({
     onRemove,
   }) => {
 
-    const makeDate = () =>{
-      const dateString = date.split(" ").slice(1).join(" ");
-      return dateString;
-    }
 
     return (
       <View style={styles.timerContainer}>
         <Text style={styles.amount}>Expense: {amount}</Text>
-        <Text style={styles.date}>Date: {makeDate()}</Text>
+        <Text style={styles.date}>Date: {date}</Text>
         <View style={styles.buttonGroup}>
           <MyButton color="#108bde" small title="Edit" onPress={onEditFormOpen} hovercolor='#8cc9ed'/>
-          <MyButton color="orangered" small title="Remove" onPress={() => onRemove(id)} hovercolor='red'/>
+          <MyButton color="orangered" small title="Remove" onPress={() => onRemove(id)} hovercolor='#f7a774'/>
         </View>
       </View>
     )

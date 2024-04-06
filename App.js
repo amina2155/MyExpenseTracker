@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet, ScrollView, FlatList, AsyncStorage } from 'react-native';
 import {useState, useEffect} from 'react'
+import * as Crypto from 'expo-crypto';
 
 import PlussOrCreate from './components/PlussOrCreate'
 import ExpenseBoxOrUpdateForm from './components/ExpenseBoxOrUpdateForm'
@@ -11,7 +12,9 @@ import TotalAndAverageInfoBox from './components/TotalAndAverageInfoBox'
 
 const App = () => {
 
-  const [expenses,setExpenses] = useState([]);
+  const [expenses,setExpenses] = useState([
+   
+  ]);
   
 
   const [totalExpense, setTotalExpense] = useState(0);
@@ -21,15 +24,6 @@ const App = () => {
       setExpenses(expenses.map(expense => {
         return expense
       }))
-      TotalAndAverageExpense();
-  }, [expenses]);
-  
-  useEffect(() => {
-    loadExpenses();
-    loadExpensesAsync();
-  }, []);
-
-  const TotalAndAverageExpense =  () => {
 
       let total = 0;
 
@@ -46,7 +40,14 @@ const App = () => {
       const average = (uniqueDatesSet.size === 0 ? 0 : (total / uniqueDatesSet.size));
 
       setAverageExpensePerDay(average);
-  };
+  
+  }, [expenses]);
+  
+  useEffect(() => {
+    loadExpenses();
+    loadExpensesAsync();
+  }, []);
+
 
 
   const saveExpensesAsync = async (expenses) => {

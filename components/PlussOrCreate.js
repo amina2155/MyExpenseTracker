@@ -38,7 +38,7 @@ export default PlussOrCreate;
 
 const styles = StyleSheet.create({
 container: {
-paddingVertical: 0,
+paddingVertical: 5,
 backgroundColor: '#ebf5fc',
 },
 buttonPadding: {
